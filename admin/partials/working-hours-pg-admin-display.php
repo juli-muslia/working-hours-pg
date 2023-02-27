@@ -33,6 +33,21 @@ function WorkingHoursUI() {
     <h2 class="text-center" style="font-family: 'Roboto', sans-serif;"><span style="color:#DE0A2B">Publishing Group</span> Workday</h2>
 	<br>
     <br>    
+
+    <table class="table table-success">
+
+    <tbody>
+    <tr style="background-color:#fff; " >
+		<th scope="row">-></th>
+        <td> <span style="color:#ff0000"><?php echo  $user;?></span></td>
+		<td><form method="post"><div class="form-group"><input type="date" id="work_date" name="work_date" value="<?php echo $start_date ?>" readonly></div></td>
+		<td><div class="form-group"><input type="time" id="start_time" name="start_time" value="<?php echo $start_time ?>" readonly></div></td> 
+		<td><div class="form-group"><input type="time" id="end_time" name="end_time" ></td>
+		<td><div class="form-group"> <button type="submit" class="btn btn-primary" name="save_work_day" id="save_work_day">Save</button></div></form></td>
+        <td></td>
+    </tr>
+    </tbody>
+    </table>
     <table id="datatableid" class="table table-success">
         <thead>
             <tr>
@@ -47,15 +62,7 @@ function WorkingHoursUI() {
             </tr>
         </thead>
         <tbody>
-        <tr style="background-color:#fff; " >
-		<th scope="row">-></th>
-        <td> <span style="color:#ff0000"><?php echo  $user;?></span></td>
-		<td><form method="post"><div class="form-group"><input type="date" id="work_date" name="work_date" value="<?php echo $start_date ?>" readonly></div></td>
-		<td><div class="form-group"><input type="time" id="start_time" name="start_time" value="<?php echo $start_time ?>" readonly></div></td> 
-		<td><div class="form-group"><input type="time" id="end_time" name="end_time" ></td>
-		<td><div class="form-group"> <button type="submit" class="btn btn-primary" name="save_work_day" id="save_work_day">Save</button></div></form></td>
-        <td></td>
-    </tr>
+        
     <?php 
    	global $wpdb;
    	$table_name = $wpdb->prefix . "working_hours_pg";
